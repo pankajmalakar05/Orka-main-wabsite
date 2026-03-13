@@ -1,0 +1,18 @@
+@import "tailwindcss";
+body {
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+html, body {
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
