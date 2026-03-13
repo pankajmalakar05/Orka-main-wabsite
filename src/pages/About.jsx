@@ -18,7 +18,7 @@ const About = ({ refProp }) => {
     <section ref={refProp}       className={`
         bg-[#e9e1d8] 
         overflow-hidden 
-        ${isAboutPage ? "pt-24" : "pt-10"} 
+        ${isAboutPage ? "pt-35" : "pt-10"} 
         pb-10
       `}
     >
@@ -126,3 +126,5 @@ const About = ({ refProp }) => {
 };
 
 export default About;
+
+

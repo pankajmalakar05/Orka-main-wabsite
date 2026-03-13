@@ -20,7 +20,7 @@ const socialLinks = [
   },
   {
     icon: FaWhatsapp,
-    link: "https://wa.me/", 
+    link: "https://wa.me/",
   },
 ];
 
@@ -53,16 +53,26 @@ const Footer = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-20 py-24 grid md:grid-cols-3 gap-16">
-
-        <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-          <h2 className="text-3xl font-bold mb-6">🌿 Premium Liposoluble Wax</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="text-3xl font-bold mb-6">
+            🌿 Premium Liposoluble Wax
+          </h2>
           <p className="opacity-80 leading-relaxed">
-            Delivering high-quality waxing solutions designed for professionals and personal care.
-            Smooth finish, skin-safe formulas, and salon-level performance.
+            Delivering high-quality waxing solutions designed for professionals
+            and personal care. Smooth finish, skin-safe formulas, and
+            salon-level performance.
           </p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+        >
           <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
 
           <ul className="space-y-4">
@@ -75,7 +85,9 @@ const Footer = () => {
               <li key={i} className="group w-fit">
                 <Link
                   to={link.path}
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                   className="relative inline-block cursor-pointer"
                 >
                   {link.name}
@@ -87,17 +99,21 @@ const Footer = () => {
         </motion.div>
 
         {/* Contact */}
-        <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.4 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4 }}
+        >
           <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
 
           <div className="space-y-4 opacity-90">
-<div className="flex items-center gap-3">
-  <FaMapMarkerAlt className="text-3xl " />
-  <span>
-    Ram Sales, 75 S.S Park Ground Floor Bypass,
-    Kanadiya Road, Indore M.P 452016
-  </span>
-</div>
+            <div className="flex items-center gap-3">
+              <FaMapMarkerAlt className="text-3xl " />
+              <span>
+                Ram Sales, 75 S.S Park Ground Floor Bypass, Kanadiya Road,
+                Indore M.P 452016
+              </span>
+            </div>
             <div className="flex items-center gap-3">
               <FaPhoneAlt />
               <span> +91-9109511021 </span>
@@ -105,23 +121,23 @@ const Footer = () => {
           </div>
 
           {/* Social Icons */}
-<div className="flex gap-6 mt-8">
-  {socialLinks.map((item, i) => {
-    const Icon = item.icon;
-    return (
-      <motion.a
-        key={i}
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ y: -6, scale: 1.2 }}
-        className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center cursor-pointer backdrop-blur-md"
-      >
-        <Icon />
-      </motion.a>
-    );
-  })}
-</div>
+          <div className="flex gap-6 mt-8">
+            {socialLinks.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.a
+                  key={i}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -6, scale: 1.2 }}
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center cursor-pointer backdrop-blur-md"
+                >
+                  <Icon />
+                </motion.a>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
 
@@ -132,7 +148,7 @@ const Footer = () => {
         transition={{ duration: 1.5 }}
         className="border-t border-white/20 py-6 text-center text-sm opacity-70"
       >
-        © {new Date().getFullYear()}  All Orka Rights Reserved.
+        © {new Date().getFullYear()} All Orka Professional Rights Reserved.
       </motion.div>
     </motion.footer>
   );

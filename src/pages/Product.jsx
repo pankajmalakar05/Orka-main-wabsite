@@ -332,6 +332,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useParams } from "react-router-dom";
+
 import {
   FaSpa,
   FaHandSparkles,
@@ -468,7 +469,7 @@ const waxDetails = [
   },
   {
     id: "rose-extract",
-    title: "Rose Extract Pre-Cleanser",  
+    title: "Rose Extract Pre-Cleanser",
     desc: "Complete your waxing routine with the calming touch of Rose Extract. This pre-cleanser gently removes oils, sweat, and impurities before waxing. Helps prepare the skin for a clean, smooth waxing experience. A perfect start for a comfortable waxing session.",
     image: aboutimage3,
     howTo:
@@ -538,31 +539,31 @@ const Product = () => {
 
   return (
     <div className="bg-[#e9e1d8] overflow-hidden">
-    {/* --- HERO SECTION --- */}
-{!id && (
-<section
-  ref={ref}
-  className="relative py-12 md:py-20 px-4 sm:px-6 md:px-10 pt-20 md:pt-28"
->
-  <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16 pt-16 md:pt-24">
-    <h2 className="text-3xl md:text-5xl font-semibold text-[#5d4037] mb-4">
-      🌿 Our Liposoluble Wax Products
-    </h2>
-    <p className="text-[#7b5e57] max-w-2xl mx-auto text-sm md:text-lg">
-      Premium Quality Liposoluble Wax for Professional & Personal Use.
-    </p>
-  </div>
+      {/* --- HERO SECTION --- */}
+      {!id && (
+        <section
+          ref={ref}
+          className="relative py-12 md:py-20 px-4 sm:px-6 md:px-10 pt-20 md:pt-28"
+        >
+          <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16 pt-16 md:pt-24">
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#5d4037] mb-4">
+              🌿 Our Liposoluble Wax Products
+            </h2>
+            <p className="text-[#7b5e57] max-w-2xl mx-auto text-sm md:text-lg">
+              Premium Quality Liposoluble Wax for Professional & Personal Use.
+            </p>
+          </div>
 
-  <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_auto] gap-8 md:gap-10 items-center">
-    {/* Mobile par image pehle dikhane ke liye order classes use ki hain */}
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      className="flex justify-center lg:order-2"
-    >
-      <img
-        src={image1}
-        className="
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_auto] gap-8 md:gap-10 items-center">
+            {/* Mobile par image pehle dikhane ke liye order classes use ki hain */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="flex justify-center lg:order-2"
+            >
+              <img
+                src={image1}
+                className="
           w-[280px] h-[300px]      
           mx-auto                    
           sm:w-[300px] sm:h-[350px]  
@@ -571,41 +572,46 @@ const Product = () => {
           rounded-[18px] 
           shadow-lg
         "
-        alt="Main Hero"
-      />
-    </motion.div>
+                alt="Main Hero"
+              />
+            </motion.div>
 
-    <div className="grid sm:grid-cols-2 gap-4 md:gap-8 lg:order-1">
-      {products.map((p, i) => (
-        <motion.div
-          key={i}
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 30 }}
-          className="border border-[#7b5e57]/40 p-5 md:p-6 bg-white/50 backdrop-blur-md rounded-[18px] text-center sm:text-left"
-        >
-          <div className="text-[#7b5e57] text-3xl md:text-4xl mb-3 flex justify-center sm:justify-start">
-            {p.icon}
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-8 lg:order-1">
+              {products.map((p, i) => (
+                <motion.div
+                  key={i}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  className="border border-[#7b5e57]/40 p-5 md:p-6 bg-white/50 backdrop-blur-md rounded-[18px] text-center sm:text-left"
+                >
+                  <div className="text-[#7b5e57] text-3xl md:text-4xl mb-3 flex justify-center sm:justify-start">
+                    {p.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-[#5d4037] mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="text-[#7b5e57] text-sm md:text-base leading-relaxed">
+                    {p.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <h3 className="text-lg md:text-xl font-semibold text-[#5d4037] mb-2">
-            {p.title}
-          </h3>
-          <p className="text-[#7b5e57] text-sm md:text-base leading-relaxed">
-            {p.desc}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-)}
+        </section>
+      )}
 
       {/* --- DETAILED PRODUCTS --- */}
-<section
-  className={`py-10 md:py-20 space-y-20 md:space-y-32 ${
-    id ? "pt-24 md:pt-32" : ""
-  }`}
->        {filteredProducts.map((wax, index) => (
-          <div key={index} className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12  ">
+      <section
+        className={`py-10 md:py-20 space-y-20 md:space-y-32 ${
+          id ? "pt-24 md:pt-32" : ""
+        }`}
+      >
+        {" "}
+        {filteredProducts.map((wax, index) => (
+          <div
+            key={index}
+            className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12  "
+          >
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 items-start">
               {/* Image Side */}
               <motion.div

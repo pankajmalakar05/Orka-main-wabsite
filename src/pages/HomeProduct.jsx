@@ -155,11 +155,11 @@
 //               <img
 //                 src={image1}
 //                 className="
-//     w-[280px] h-[300px]      
-//     sm:w-[320px] sm:h-[350px] 
-//     md:w-auto md:h-[450px] 
-//     object-cover 
-//     rounded-2xl 
+//     w-[280px] h-[300px]
+//     sm:w-[320px] sm:h-[350px]
+//     md:w-auto md:h-[450px]
+//     object-cover
+//     rounded-2xl
 //     shadow-lg
 //   "
 //                 alt="Main product"
@@ -238,8 +238,8 @@
 
 //                 <div className="flex items-center justify-center md:justify-start gap-4 flex-wrap">
 //                   {/* <button
-//                     className="px-6 md:px-8 py-3 md:py-4 
-// text-[#53403d] text-2xl md:text-3xl font-bold 
+//                     className="px-6 md:px-8 py-3 md:py-4
+// text-[#53403d] text-2xl md:text-3xl font-bold
 // tracking-wide"
 //                   >
 //                     {wax.price}
@@ -262,14 +262,6 @@
 // };
 
 // export default HomeProduct;
-
-
-
-
-
-
-
-
 
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
@@ -321,7 +313,7 @@ const waxDetails = [
     image: image2,
     price: "₹1350/-",
   },
-  { 
+  {
     id: "charcoal",
     title: "Charcoal Liposoluble Wax",
     desc: "Experience deep cleansing care with our Charcoal Liposoluble Wax for effective hair removal. Its purifying formula helps leave skin feeling fresh and clear after waxing. Perfect for maintaining a clean, smooth, and refined skin surface. Reveals soft, refreshed skin with every use.",
@@ -443,9 +435,9 @@ const HomeProduct = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-<img
-  src={image1}
-  className="
+              <img
+                src={image1}
+                className="
     w-[280px] h-[300px]      
     sm:w-[320px] sm:h-[350px] 
     md:w-full md:max-w-[520px] md:h-[420px] 
@@ -454,15 +446,20 @@ const HomeProduct = () => {
     rounded-2xl 
     shadow-lg
   "
-  alt="Main product"
-/>
+                alt="Main product"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* --- DETAILED PRODUCTS --- */}
-<section ref={sectionRef} className="py-10 md:py-20 space-y-20 md:space-y-32">        {waxDetails.map((wax, index) => (
+      <section
+        ref={sectionRef}
+        className="py-10 md:py-20 space-y-20 md:space-y-32"
+      >
+        {" "}
+        {waxDetails.map((wax, index) => (
           <div key={index} className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
             <div
               className={`flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-center ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
@@ -535,11 +532,11 @@ tracking-wide"
                   >
                     {wax.price}
                   </button> */}
-<Link to={`/product/${wax.id}`} onClick={handleScrollCenter}>
-  <button className="px-8 md:px-10 py-3 md:py-4 border-2 border-[#5d4037] text-[#5d4037] rounded-full font-semibold hover:bg-[#5d4037] hover:text-white transition-all duration-300">
-    See Details
-  </button>
-</Link>
+                  <Link to={`/product/${wax.id}`} onClick={handleScrollCenter}>
+                    <button className="px-8 md:px-10 py-3 md:py-4 border-2 border-[#5d4037] text-[#5d4037] rounded-full font-semibold hover:bg-[#5d4037] hover:text-white transition-all duration-300">
+                      See Details
+                    </button>
+                  </Link>
 
                   {/* Price Button */}
                 </div>
@@ -553,4 +550,3 @@ tracking-wide"
 };
 
 export default HomeProduct;
-
