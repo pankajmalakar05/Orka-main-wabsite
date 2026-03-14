@@ -210,36 +210,47 @@ import Swal from "sweetalert2";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
-
+const [loading,setLoading] = useState(false)
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
   const [message,setMessage] = useState("")
 
-  const sendWhatsApp = (e) => {
-    e.preventDefault()
+const sendWhatsApp = (e) => {
+  e.preventDefault();
 
-    const phone = "919109511021"
+  setLoading(true)
 
-    const text = `Orka Professional New Message
+  const phone = "919109511021";
+
+  const text = `New Website Message
 Name: ${name}
 Email: ${email}
-Message: ${message}`
+Message: ${message}`;
 
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+  setTimeout(() => {
 
     window.open(url,"_blank")
 
-Swal.fire({
-  icon: "success",
-  title: "Message Sent",
-  text: "✅ Thank you for contacting ORKA Professional. Your message has been sent successfully. We will contact you soon.",
-  confirmButtonColor: "#7c6247",
-  confirmButtonText: "OK",
-});
+    setLoading(false)
+
+    Swal.fire({
+      icon: "success",
+      title: "Message Sent Successfully",
+      text: "Thank you for contacting ORKA Professional. We will get back to you soon.",
+      confirmButtonColor: "#7c6247",
+      timer: 120000,
+      timerProgressBar: true
+    });
+
     setName("")
     setEmail("")
     setMessage("")
-  }
+
+  },1200)
+
+};
 
   return (
     <div className="w-full overflow-x-hidden min-h-screen bg-gradient-to-br from-[#f4efe9] to-[#e6dfd6] text-[#2e2018]">
@@ -375,13 +386,14 @@ Swal.fire({
               className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#7c6247]"
             />
 
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              type="submit"
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-[#7c6247] to-[#b89b7a] text-white font-semibold"
-            >
-              Send Message
-            </motion.button>
+<motion.button
+  whileTap={{ scale: 0.95 }}
+  type="submit"
+  disabled={loading}
+  className="w-full py-3 rounded-lg bg-gradient-to-r from-[#7c6247] to-[#b89b7a] text-white font-semibold flex justify-center items-center gap-2"
+>
+  {loading ? "Sending..." : "Send Message"}
+</motion.button>
 
           </form>
 
