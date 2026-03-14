@@ -69,12 +69,14 @@ const About = ({ refProp }) => {
           </div>
 
           <div className="flex justify-center md:justify-start mb-6">
-            <button
-              className="border border-[#5d4037] px-6 py-3 text-[#5d4037] hover:bg-[#5d4037] hover:text-white transition"
-              onClick={() => (window.location.href = "/about")}
-            >
-              Read More
-            </button>
+{location.pathname !== "/about" && (
+  <button
+    className="border border-[#5d4037] px-6 py-3 text-[#5d4037] hover:bg-[#5d4037] hover:text-white transition"
+    onClick={() => (window.location.href = "/about")}
+  >
+    Read More
+  </button>
+)}
           </div>
           <div className="flex gap-16 mt-10 mb-10">
             <div>

@@ -232,42 +232,55 @@ const Contact = () => {
       {/* CONTACT CARDS */}
       <section className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 mb-16">
 
-        <motion.div
-          whileHover={{ y: -8 }}
-          className="bg-white/70 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg"
-        >
-          <div className="text-3xl text-[#7c6247] flex justify-center mb-3">
-            <FaPhoneAlt />
-          </div>
-          <h3 className="text-lg font-semibold">Phone</h3>
-          <p className="opacity-70 text-sm mt-1">+91 9109511021</p>
-        </motion.div>
+<motion.a
+  href="tel:+919109511021"
+  whileHover={{ y: -8 }}
+  className="bg-white/70 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg block"
+>
+  <div className="text-3xl text-[#7c6247] flex justify-center mb-3">
+    <FaPhoneAlt />
+  </div>
 
-        <motion.div
-          whileHover={{ y: -8 }}
-          className="bg-white/70 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg"
-        >
-          <div className="text-3xl text-[#7c6247] flex justify-center mb-3">
-            <FaEnvelope />
-          </div>
-          <h3 className="text-lg font-semibold">Email</h3>
-          <p className="opacity-70 text-sm break-all mt-1">
-            info@orkaprofessional.com
-          </p>
-        </motion.div>
+  <h3 className="text-lg font-semibold">Phone</h3>
 
-        <motion.div
-          whileHover={{ y: -8 }}
-          className="bg-white/70 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg"
-        >
-          <div className="text-3xl text-[#7c6247] flex justify-center mb-3">
-            <FaMapMarkerAlt />
-          </div>
-          <h3 className="text-lg font-semibold">Location</h3>
-          <p className="opacity-70 text-sm mt-1">
-            Indore, Madhya Pradesh
-          </p>
-        </motion.div>
+  <p className="opacity-70 text-sm mt-1">
+    +91 9109511021
+  </p>
+</motion.a>
+
+<motion.a
+  href="mailto:info@orkaprofessional.com"
+  whileHover={{ y: -8 }}
+  className="bg-white/70 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg block"
+>
+  <div className="text-3xl text-[#7c6247] flex justify-center mb-3">
+    <FaEnvelope />
+  </div>
+
+  <h3 className="text-lg font-semibold">Email</h3>
+
+  <p className="opacity-70 text-sm break-all mt-1">
+    info@orkaprofessional.com
+  </p>
+</motion.a>
+
+<motion.a
+  href="https://www.google.com/maps?q=Indore,Madhya+Pradesh"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ y: -8 }}
+  className="bg-white/70 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg block cursor-pointer"
+>
+  <div className="text-3xl text-[#7c6247] flex justify-center mb-3">
+    <FaMapMarkerAlt />
+  </div>
+
+  <h3 className="text-lg font-semibold">Location</h3>
+
+  <p className="opacity-70 text-sm mt-1">
+    Indore, Madhya Pradesh
+  </p>
+</motion.a>
 
       </section>
 
