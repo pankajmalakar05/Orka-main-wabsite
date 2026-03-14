@@ -388,6 +388,7 @@ const waxDetails = [
     ingredients:
       "Cocoa Powder, Glyceryl Rosinate, Rosin, Cera Alba, Cocoa Seed Butter,  Paraffin Wax, Paraffin Oil, CI 77891, CI 77019",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "charcoal",
@@ -399,6 +400,7 @@ const waxDetails = [
     ingredients:
       "INGREDIENTS:Glyceryl Rosinate, Select Vegetable Oil, Cera Alba, Cocoa Seed Butter, Titanium Dioxide (CI 77891), Fragrance, CI 77019",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "white-chocolate",
@@ -411,6 +413,7 @@ const waxDetails = [
       "Glycerly Rosinatee\
     Select Vegetable Oil Cera Alba Cocoa Seed Butter, Titanium Dioxide CI 77891 Fragrance CI 77019",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "aloe-vera",
@@ -422,6 +425,7 @@ const waxDetails = [
     ingredients:
       "Aloe Extracts, Glyceryl rosinate, Castor (Ricinus Communis) Seed Oil, Perfume, Titanium dioxide, Zinc oxide, Aloe Barbadensis (ALOE) Extract, Pentaerythrityl tetra-di-t-butyl hydroxyhydrocinnamate, CI 470 00, CI 61565",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "strawberry",
@@ -433,6 +437,7 @@ const waxDetails = [
     ingredients:
       "Rosin, Coco Butter, Edible Oil, Titanium Zinc Dioxide, Fragrance, Strawberry Extract.",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "green-apple",
@@ -444,6 +449,7 @@ const waxDetails = [
     ingredients:
       "Green apple essence, Glycerly Rosinate, Rosin, Cera Alba, Cocoa Seed Butter, Paraffin Wax, Paraffin Oil, CI 77891, CI 77019",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "kesar",
@@ -455,6 +461,7 @@ const waxDetails = [
     ingredients:
       "Kesar Powder, Glycerly Rosinate, Rosin, Cera Alba, Cocoa Seed Butter, Paraffin Wax, Paraffin Oil, CI 77891, CI 77019",
     price: "₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "korean",
@@ -465,7 +472,8 @@ const waxDetails = [
       "Apply Orka Professional Pre-Wax Cleanser to the desired area. Remove the lid and place the wax container in a wax heater. Heat the wax until it melts, then lower the temperature to a suitable working level. Using a spatula, apply a coat of wax to the desired area in the direction of hair growth. Place a strip over the applied wax and press firmly. Keeping the skin taut, pull the strip away quickly in the opposite direction of hair growth. Gently massage the waxed area with Orka Professional Post-Wax Lotion for best results.",
     ingredients:
       "Bees Wax, Titanium Di Oxide, Korean Ginseng, Lanolin Perfume, Olive Oil, Glycerin, Shea Butter, Gylcerin Rosinate, Argan Oil.",
-    price: "₹1350/-",
+    price: " ₹1350/-",
+    mrp:"MRP",
   },
   {
     id: "rose-extract",
@@ -477,6 +485,7 @@ const waxDetails = [
     ingredients:
       "Parafinnum liquidum IP citrus orange (orange), melaleuca alternifolia (tea tree oil), pogostemon cabling (patchouli), pelargonium graveolen (geranium), citrus sinensis (orange)",
     price: "₹900/-",
+    mrp:"MRP"
   },
   {
     id: "orange-extract",
@@ -488,6 +497,7 @@ const waxDetails = [
     ingredients:
       "Parafinnum liquidum IP citrus orange (orange), melaleuca alternifolia (tea tree oil), pogostemon cabling (patchouli), pelargonium graveolen (geranium), citrus sinensis (orange)",
     price: "₹900/-",
+    mrp:"MRP",
   },
 ];
 
@@ -547,7 +557,7 @@ const Product = () => {
         >
           <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16 pt-16 md:pt-24">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#5d4037] mb-4">
-              🌿 Our Liposoluble Wax Products
+              🌿 Our Products
             </h2>
             <p className="text-[#7b5e57] max-w-2xl mx-auto text-sm md:text-lg">
               Premium Quality Liposoluble Wax for Professional & Personal Use.
@@ -651,11 +661,12 @@ const Product = () => {
 
                 <ProductAccordion title="HOW TO USE" content={wax.howTo} />
 
-                <div className="mt-4 md:mt-6">
-                  <button className="text-3xl md:text-4xl font-bold text-[#3e2723]">
-                    {wax.price}
-                  </button>
-                </div>
+<div className="mt-4 md:mt-6">
+  <button className="text-3xl md:text-4xl font-bold text-[#3e2723] flex items-center gap-2">
+        <span className="text-lg ">{wax.mrp}</span>
+    <span>{wax.price}</span>
+  </button>
+</div>
               </motion.div>
             </div>
           </div>

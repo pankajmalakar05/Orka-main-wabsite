@@ -399,7 +399,7 @@ const HomeProduct = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#5d4037] mb-4 px-2">
-              🌿 Our Liposoluble Wax Products
+              🌿 Our Products
             </h2>
             <p className="text-[#7b5e57] max-w-2xl mx-auto text-sm md:text-lg leading-relaxed px-4">
               Premium Quality Liposoluble Wax for Professional & Personal Use.

@@ -58,8 +58,8 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-        <h2 className="text-3xl font-bold mb-6">
-  ORKA Professional Wax
+        <h2 className="text-2xl font-bold mb-6">
+  ORKA PROFESSIONAL
 </h2>
           <p className="opacity-80 leading-relaxed">
             Delivering high-quality waxing solutions designed for professionals
