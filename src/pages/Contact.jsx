@@ -218,15 +218,24 @@ const [loading,setLoading] = useState(false)
 const sendWhatsApp = (e) => {
   e.preventDefault();
 
+  // Validation first
+  if (!name || !email || !message) {
+    Swal.fire({
+      icon: "warning",
+      title: "Missing Information",
+      text: "⚠ Please fill in your Name, Email and Message.",
+      confirmButtonColor: "#7c6247",
+    });
+    return;
+  }
+
   setLoading(true);
 
   const phone = "919109511021";
-
-  const text = `New Website Message
+  const text = ` Orka Professional New Message
 Name: ${name}
 Email: ${email}
 Message: ${message}`;
-
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
   Swal.fire({
@@ -234,19 +243,16 @@ Message: ${message}`;
     title: "Message Sent Successfully",
     text: "Thank you for contacting ORKA Professional. We will get back to you soon.",
     confirmButtonColor: "#7c6247",
-    confirmButtonText: "Open WhatsApp",
-    timer: 4000,
-    timerProgressBar: true
-  }).then(() => {
+    confirmButtonText: "ok",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.open(url, "_blank");
 
-    window.open(url, "_blank");
-
-    setLoading(false);
-
-    setName("");
-    setEmail("");
-    setMessage("");
-
+      setLoading(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+    }
   });
 };
 
