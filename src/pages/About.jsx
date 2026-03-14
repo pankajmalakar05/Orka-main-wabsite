@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { useLocation } from "react-router-dom";
-
+import { useNavigate, useLocation } from "react-router-dom";
 import aboutimage1 from "../assets/Orka-images/aboutimage1.png";
 import aboutimage2 from "../assets/Orka-images/aboutimage2.jpg";
 import aboutimage3 from "../assets/Orka-images/aboutimage3.jpg";
@@ -11,7 +10,8 @@ import aboutimage4 from "../assets/Orka-images/aboutimage4.jpg";
 const About = ({ refProp }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
- const location = useLocation();
+const navigate = useNavigate();
+const location = useLocation();
   const isAboutPage = location.pathname === "/about";
 
   return (
@@ -72,11 +72,12 @@ const About = ({ refProp }) => {
 {location.pathname !== "/about" && (
   <button
     className="border border-[#5d4037] px-6 py-3 text-[#5d4037] hover:bg-[#5d4037] hover:text-white transition"
-    onClick={() => (window.location.href = "/about")}
+    onClick={() => navigate("/about")}
   >
     Read More
   </button>
 )}
+
           </div>
           <div className="flex gap-16 mt-10 mb-10">
             <div>
