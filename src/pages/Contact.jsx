@@ -204,15 +204,46 @@
 
 
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
+
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [message,setMessage] = useState("")
+
+  const sendWhatsApp = (e) => {
+    e.preventDefault()
+
+    const phone = "919109511021"
+
+    const text = `Orka Professional New Message
+Name: ${name}
+Email: ${email}
+Message: ${message}`
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
+
+    window.open(url,"_blank")
+
+Swal.fire({
+  icon: "success",
+  title: "Message Sent",
+  text: "✅ Thank you for contacting ORKA Professional. Your message has been sent successfully. We will contact you soon.",
+  confirmButtonColor: "#7c6247",
+  confirmButtonText: "OK",
+});
+    setName("")
+    setEmail("")
+    setMessage("")
+  }
+
   return (
     <div className="w-full overflow-x-hidden min-h-screen bg-gradient-to-br from-[#f4efe9] to-[#e6dfd6] text-[#2e2018]">
 
-      {/* HERO */}
       <section className="text-center pt-35 pb-12 px-4">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
@@ -229,7 +260,6 @@ const Contact = () => {
         </p>
       </section>
 
-      {/* CONTACT CARDS */}
       <section className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 mb-16">
 
 <motion.a
@@ -284,10 +314,8 @@ const Contact = () => {
 
       </section>
 
-      {/* MAIN CONTACT AREA */}
       <section className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 pb-20">
 
-        {/* COMPANY INFO */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -310,7 +338,6 @@ const Contact = () => {
 
         </motion.div>
 
-        {/* CONTACT FORM */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -322,28 +349,35 @@ const Contact = () => {
             Send a Message
           </h2>
 
-          <form className="space-y-5">
+          <form onSubmit={sendWhatsApp} className="space-y-5">
 
             <input
               type="text"
               placeholder="Your Name"
+              value={name}
+              onChange={(e)=>setName(e.target.value)}
               className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#7c6247]"
             />
 
             <input
               type="email"
               placeholder="Your Email"
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#7c6247]"
             />
 
             <textarea
               rows="4"
               placeholder="Your Message"
+              value={message}
+              onChange={(e)=>setMessage(e.target.value)}
               className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#7c6247]"
             />
 
             <motion.button
               whileTap={{ scale: 0.95 }}
+              type="submit"
               className="w-full py-3 rounded-lg bg-gradient-to-r from-[#7c6247] to-[#b89b7a] text-white font-semibold"
             >
               Send Message
