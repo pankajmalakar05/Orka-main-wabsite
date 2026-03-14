@@ -218,7 +218,7 @@ const [loading,setLoading] = useState(false)
 const sendWhatsApp = (e) => {
   e.preventDefault();
 
-  setLoading(true)
+  setLoading(true);
 
   const phone = "919109511021";
 
@@ -229,27 +229,25 @@ Message: ${message}`;
 
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
-  setTimeout(() => {
+  Swal.fire({
+    icon: "success",
+    title: "Message Sent Successfully",
+    text: "Thank you for contacting ORKA Professional. We will get back to you soon.",
+    confirmButtonColor: "#7c6247",
+    confirmButtonText: "Open WhatsApp",
+    timer: 4000,
+    timerProgressBar: true
+  }).then(() => {
 
-    window.open(url,"_blank")
+    window.open(url, "_blank");
 
-    setLoading(false)
+    setLoading(false);
 
-    Swal.fire({
-      icon: "success",
-      title: "Message Sent Successfully",
-      text: "Thank you for contacting ORKA Professional. We will get back to you soon.",
-      confirmButtonColor: "#7c6247",
-      timer: 120000,
-      timerProgressBar: true
-    });
+    setName("");
+    setEmail("");
+    setMessage("");
 
-    setName("")
-    setEmail("")
-    setMessage("")
-
-  },1200)
-
+  });
 };
 
   return (
