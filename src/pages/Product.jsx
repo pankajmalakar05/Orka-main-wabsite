@@ -351,8 +351,8 @@ import image6 from "../assets/Orka-images/straberrys6.jpg";
 import image7 from "../assets/Orka-images/greenapples3.jpg";
 import image8 from "../assets/Orka-images/kesers4.jpg";
 import image9 from "../assets/Orka-images/koreans5.jpg";
-import image10 from "../assets/Orka-images/orka/orange_extract_img.jpg";
-import aboutimage3 from "../assets/Orka-images/imageorkanew2.png";
+import image10 from "../assets/Orka-images/orange1.jpg";
+import image11 from "../assets/Orka-images/rose1.jpg";
 
 const products = [
   {
@@ -479,7 +479,7 @@ const waxDetails = [
     id: "rose-extract",
     title: "Rose Extract Pre-Cleanser",
     desc: "Complete your waxing routine with the calming touch of Rose Extract. This pre-cleanser gently removes oils, sweat, and impurities before waxing. Helps prepare the skin for a clean, smooth waxing experience. A perfect start for a comfortable waxing session.",
-    image: aboutimage3,
+    image: image11,
     howTo:
       "Apply Orka Professional Pre-Wax Cleanser to the desired area. Remove the lid and place the wax container in a wax heater. Heat the wax until it melts, then lower the temperature to a suitable working level. Using a spatula, apply a coat of wax to the desired area in the direction of hair growth. Place a strip over the applied wax and press firmly. Keeping the skin taut, pull the strip away quickly in the opposite direction of hair growth. Gently massage the waxed area with Orka Professional Post-Wax Lotion for best results.",
     ingredients:
@@ -634,7 +634,7 @@ const Product = () => {
                 <img
                   src={wax.image}
                   alt={wax.title}
-                  className="w-full max-w-[500px] h-[350px] md:h-[450px] object-cover rounded-3xl shadow-xl"
+                  className="w-full max-w-[500px] h-[350px] md:h-[520px] object-cover rounded-3xl shadow-xl"
                 />
               </motion.div>
 

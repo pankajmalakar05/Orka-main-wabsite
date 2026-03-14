@@ -269,7 +269,6 @@ import { FaSpa, FaHandSparkles, FaLeaf, FaBriefcase } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import sideImage from "../assets/Orka-images/image12.jpg";
 import aboutimage2 from "../assets/Orka-images/imageorkanew1.png";
-import aboutimage3 from "../assets/Orka-images/imageorkanew2.png";
 
 import image1 from "../assets/Orka-images/image12.jpg";
 import image2 from "../assets/Orka-images/darkchocolates2.jpg";
@@ -280,7 +279,9 @@ import image6 from "../assets/Orka-images/straberrys6.jpg";
 import image7 from "../assets/Orka-images/greenapples3.jpg";
 import image8 from "../assets/Orka-images/kesers4.jpg";
 import image9 from "../assets/Orka-images/koreans5.jpg";
-import image10 from "../assets/Orka-images/orka/orange_extract_img.jpg";
+import image10 from "../assets/Orka-images/orange1.jpg";
+import image11 from "../assets/Orka-images/rose1.jpg";
+
 
 const products = [
   {
@@ -373,7 +374,7 @@ const waxDetails = [
     id: "rose-extract",
     title: "Rose Extract Pre Cleanser",
     desc: "Refresh your skin after waxing with the energizing touch of Orange Extract. The cleanser helps remove wax residue while revitalizing the skin. Leaves the skin feeling clean, fresh, and smooth. A bright finish for a comfortable post-wax experience.",
-    image: aboutimage3,
+    image: image11,
     price: "₹900/-",
   },
 ];
@@ -475,7 +476,7 @@ const HomeProduct = () => {
                 <img
                   src={wax.image}
                   alt={wax.title}
-                  className="w-full max-w-[500px] h-[350px] md:h-[450px] object-cover rounded-3xl shadow-xl"
+                  className="w-full max-w-[500px] h-[350px] md:h-[520px] object-cover rounded-3xl shadow-xl"
                 />
               </motion.div>
 
